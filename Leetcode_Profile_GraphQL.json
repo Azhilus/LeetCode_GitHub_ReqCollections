@@ -1,0 +1,347 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Leetcode_Profile_GraphQL",
+    "dateExported": "2024-02-15T11:28:46.440Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fb47d1c6-1549-4f51-8294-1cbe6f19fb4f",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-15T11:24:26.890Z",
+            "modified": "2024-02-15T11:25:30.390Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query userPublicProfile($username: String!) {\n  matchedUser(username: $username) {\n    contestBadge {\n      name\n      expired\n      hoverText\n      icon\n    }\n    username\n    githubUrl\n    twitterUrl\n    linkedinUrl\n    profile {\n      ranking\n      userAvatar\n      realName\n      aboutMe\n      school\n      websites\n      countryName\n      company\n      jobTitle\n      skillTags\n      postViewCount\n      postViewCountDiff\n      reputation\n      reputationDiff\n      solutionCount\n      solutionCountDiff\n      categoryDiscussCount\n      categoryDiscussCountDiff\n    }\n    badges {\n      id\n      name\n      shortName\n      displayName\n      icon\n      hoverText\n      medal {\n        slug\n        config {\n          iconGif\n          iconGifBackground\n        }\n      }\n      creationDate\n      category\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "77bd52e0-b807-4053-92ea-1e141a44f060",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_languages",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-02-15T11:24:26.891Z",
+            "modified": "2024-02-15T11:26:00.351Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query languageStats($username: String!) {\n  matchedUser(username: $username) {\n    languageProblemCount {\n      languageName\n      problemsSolved\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "4899e015-b2d2-4aee-9ab0-a2a0e30b5722",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_skillstats",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-02-15T11:24:26.892Z",
+            "modified": "2024-02-15T11:26:17.296Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query skillStats($username: String!) {\n  matchedUser(username: $username) {\n    tagProblemCounts {\n      advanced {\n        tagName\n        tagSlug\n        problemsSolved\n      }\n      intermediate {\n        tagName\n        tagSlug\n        problemsSolved\n      }\n      fundamental {\n        tagName\n        tagSlug\n        problemsSolved\n      }\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "80a3ec24-1ee9-4388-80e5-b867fd11e9e8",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_contests",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-15T11:24:26.893Z",
+            "modified": "2024-02-15T11:26:26.551Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query userContestRankingInfo($username: String!) {\n  userContestRanking(username: $username) {\n    attendedContestsCount\n    rating\n    globalRanking\n    totalParticipants\n    topPercentage\n    badge {\n      name\n    }\n  }\n  userContestRankingHistory(username: $username) {\n    attended\n    trendDirection\n    problemsSolved\n    totalProblems\n    finishTimeInSeconds\n    rating\n    ranking\n    contest {\n      title\n      startTime\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "189f4934-ffe9-443b-a916-c0ccad014839",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_problems",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-02-15T11:24:26.894Z",
+            "modified": "2024-02-15T11:26:35.072Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query userProblemsSolved($username: String!) {\n  allQuestionsCount {\n    difficulty\n    count\n  }\n  matchedUser(username: $username) {\n    problemsSolvedBeatsStats {\n      difficulty\n      percentage\n    }\n    submitStatsGlobal {\n      acSubmissionNum {\n        difficulty\n        count\n      }\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "0e878daf-6651-41e4-9578-541f194d7aab",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_badges",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-02-15T11:24:26.895Z",
+            "modified": "2024-02-15T11:26:43.154Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query userBadges($username: String!) {\n  matchedUser(username: $username) {\n    badges {\n      id\n      name\n      shortName\n      displayName\n      icon\n      hoverText\n      medal {\n        slug\n        config {\n          iconGif\n          iconGifBackground\n        }\n      }\n      creationDate\n      category\n    }\n    upcomingBadges {\n      name\n      icon\n      progress\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a8baf80-1c40-4e99-b760-0c412682b9b6",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_calendar",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-02-15T11:24:26.896Z",
+            "modified": "2024-02-15T11:26:52.281Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query userProfileCalendar($username: String!, $year: Int) {\n  matchedUser(username: $username) {\n    userCalendar(year: $year) {\n      activeYears\n      streak\n      totalActiveDays\n      dccBadges {\n        timestamp\n        badge {\n          name\n          icon\n        }\n      }\n      submissionCalendar\n    }\n  }\n}",
+                    "variables": "{\"username\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "2e807e42-5d23-4fd5-8b4d-fca3d96e5785",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "user_recentsubmissions",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-02-15T11:24:26.897Z",
+            "modified": "2024-02-15T11:27:04.844Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query recentAcSubmissions($username: String!, $limit: Int!) {\n  recentAcSubmissionList(username: $username, limit: $limit) {\n    id\n    title\n    titleSlug\n    timestamp\n  }\n}",
+                    "variables": "{\"username\": \"\", \"limit\": 15}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "0b0d8d73-7051-441b-858e-728188dfae3a",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "current_timestamp",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-02-15T11:24:26.898Z",
+            "modified": "2024-02-15T11:27:16.195Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query currentTimestamp {\n  currentTimestamp\n}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "c524b6f0-5193-445f-bad3-0b99a15af256",
+            "colId": "c2532054-60c0-43b4-bb31-144eb508e1b4",
+            "containerId": "",
+            "name": "question_daily",
+            "url": "https://leetcode.com/graphql/",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-02-15T11:24:26.899Z",
+            "modified": "2024-02-15T11:27:20.947Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query questionOfToday {\n  activeDailyCodingChallengeQuestion {\n    date\n    link\n    question {\n      acRate\n      difficulty\n      frontendQuestionId: questionFrontendId\n      isFavor\n      paidOnly: isPaidOnly\n      title\n      titleSlug\n      hasVideoSolution\n      hasSolution\n      topicTags {\n        name\n        id\n        slug\n      }\n    }\n  }\n}"
+                }
+            },
+            "tests": []
+        }
+    ]
+}

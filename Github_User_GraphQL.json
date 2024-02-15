@@ -1,0 +1,225 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Github_User_GraphQL",
+    "dateExported": "2024-02-15T11:28:29.441Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "224d6678-b1fe-453a-8f8b-32e755a3a3b0",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user",
+            "url": "https://api.github.com/users/{username}/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-15T11:24:24.575Z",
+            "modified": "2024-02-15T11:27:34.021Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "username",
+                    "value": "",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "bb545f72-71cd-48e8-b9e4-63fd650ae9d6",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_followers",
+            "url": "https://api.github.com/users/{username}/followers",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-15T11:24:24.576Z",
+            "modified": "2024-02-15T11:27:39.854Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "username",
+                    "value": "",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "43ce7304-75d7-4135-99ff-d0cc0b61d0bd",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_repositories",
+            "url": "https://api.github.com/users/{username}/repos",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-02-15T11:24:24.577Z",
+            "modified": "2024-02-15T11:27:43.734Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "username",
+                    "value": "",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "ea6dc9ae-c310-4aef-a8af-85dc89d25cbd",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_starred",
+            "url": "https://api.github.com/users/{username}/starred",
+            "method": "GET",
+            "sortNum": 37500,
+            "created": "2024-02-15T11:24:24.578Z",
+            "modified": "2024-02-15T11:27:47.749Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "username",
+                    "value": "",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "ea5a543f-8705-4ce7-b17a-9ad0f7797ca6",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_contributions",
+            "url": "https://api.github.com/graphql",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-02-15T11:24:24.579Z",
+            "modified": "2024-02-15T11:27:56.693Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query($userName:String!) { \n  user(login: $userName){\n    contributionsCollection {\n      contributionCalendar {\n        totalContributions\n        weeks {\n          contributionDays {\n            contributionCount\n            date\n          }\n        }\n      }\n    }\n  }\n}",
+                    "variables": "{ \"userName\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "2f69716e-79f3-4239-92af-9fb4fa3de0ec",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_languages",
+            "url": "https://api.github.com/graphql",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-02-15T11:24:24.580Z",
+            "modified": "2024-02-15T11:28:10.766Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query($userName:String!) { \n  user(login: $userName){\n    repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {\n      nodes {\n        languages(first: 10) {\n          edges {\n            node {\n              name\n            }\n            size\n          }\n        }\n      }\n    }\n  }\n}\n",
+                    "variables": "{ \"userName\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "540f1824-13a1-454c-95c6-8350517c6940",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_issues",
+            "url": "https://api.github.com/graphql",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-15T11:24:24.581Z",
+            "modified": "2024-02-15T11:28:17.175Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query($userName:String!) { \n  user(login: $userName){\n    issues(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {\n      nodes {\n        title\n        body\n        createdAt\n        updatedAt\n        repository {\n          nameWithOwner\n        }\n        author {\n          login\n        }\n      }\n    }\n  }\n}\n",
+                    "variables": "{ \"userName\": \"\"}"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "212fd4dd-9f03-4978-ae62-67c4a87d334e",
+            "colId": "d518495f-6dec-4ab2-b402-56672e7024f0",
+            "containerId": "",
+            "name": "user_pulls",
+            "url": "https://api.github.com/graphql",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-02-15T11:24:24.582Z",
+            "modified": "2024-02-15T11:28:23.839Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "graphql",
+                "raw": "",
+                "form": [],
+                "graphql": {
+                    "query": "query($userName:String!) { \n  user(login: $userName){\n    pullRequests(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {\n      totalCount\n      nodes {\n        title\n        body\n        createdAt\n        updatedAt\n        repository {\n          nameWithOwner\n        }\n        author {\n          login\n        }\n        merged\n        state\n        number\n      }\n    }\n  }\n}",
+                    "variables": "{ \"userName\": \"\"}"
+                }
+            },
+            "tests": []
+        }
+    ]
+}
